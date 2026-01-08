@@ -643,3 +643,45 @@ If you finish early, try these extensions:
 Push your completed project to GitHub and submit the repository URL through Canvas by the due date.
 
 **Due:** Monday of Week 2 (see Canvas for exact date/time)
+
+
+Reflection answers
+
+2.3: 
+
+    1. Being able to define the function of each part of the test can help you in the case that the test is not working as you may have thought. You can still have errors in your test, and I'm assuming we don't want to start writing tests for tests, so being as verbose as possible helps us when we need to get in there and fix it manually.
+
+4.3:
+
+    3. Integration tests give you confidence that the units are able to work together in the way you have set them up in the test. This helps to test certain workflows or pipelines. Unit tests alone can accomplish singular tasks, like changing the title to the slug form, but an integration test can make sure that the software is able to change the title, excerpt, and body of the article how you want. It checks to make sure that none of the units interfere with each other.
+
+Added Tests:
+
+    slugify:
+
+  6     it('handles strings with numbers', () => {
+  1       expect(slugify('abc 123 come with me')).toBe('abc-123-come-with-me');
+  2     });
+
+    truncate:
+
+  48    it('only adds one copy of suffix if the string length is negative', () => {
+  1       expect(truncate('',-2)).toBe('...');
+  2     });
+
+    capitalize:
+ 66    it('properly captitalizes the first word only when given a mix of lower and upper case words', ()     => {
+  1       expect(capitalize('HeLlO woRlD!')).toBe('Hello world!');
+  2     });
+
+    count words:
+
+ 23     it('counts special characters', () => {
+ 24       expect(countWords('. ! , ')).toBe(3);
+ 25     });
+
+Testing Trophy Connection:
+    This lab takes you through the steps of setting up your project and designing unit and integration tests. The testing trophy as I understood it was to stress the importance and return of investment of different types of tests. Unit tests, while important, give a smaller return than integration tests. So by going through and making multiple unit tests and integration tests, we can see that while the unit tests were important it took longer to implement and didn't give as much confidence as the integration tests. The key is to recognize how many tests you need to implement for each type (static, unit, integration, end to end) of test so that you're not wasting your time, but can still be confident in your software.
+
+Stretch Goals:
+    I included the code in src/utils/async.ts and src/utils/async.test.ts
